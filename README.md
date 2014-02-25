@@ -18,31 +18,6 @@ Install
 	mongodb.php to your /application/config folder.)
 
 
-
-Input Parameters:
------------------
-@param $mongo_db - MongoDB handler
-@param $parameters - 
-		$pagination->setParameters(array(
-		  '#collection'	=>  $collection_name,
-		  '#select'		=> 	array(field_names),
-		  '#find'		=> 	array(where_conditions),
-		  '#sort'		=>  array(field_name => 1 / -1),
-		), $currentOffset, $itemsPerPage);
-		
-Output sample:
---------------
-Array(
-    [dataset] => Array(
-            [0] => Array(
-                    [_id]  => MongoId Object([$id] => 5230695e94d03c3cf2608c8c)
-                    [name] => 'Test'
-                )
-        	)
-    [totalPages] => 2
-    [totalItems] => 10
-   )
-
 Example to use Mongo Pagination in your model file:
 ---------------------------------------------------
 
@@ -72,3 +47,15 @@ Example to use Mongo Pagination in your model file:
 		$output['pagination']['totalItems'] = $dataSet['totalItems'];
 		$output['pagination']['links'] = $pagination->getPageLinks();
 		
+Output sample:
+--------------
+Array(
+    [dataset] => Array(
+            [0] => Array(
+                    [_id]  => MongoId Object([$id] => 5230695e94d03c3cf2608c8c)
+                    [name] => 'Test'
+                )
+        	)
+    [totalPages] => 2
+    [totalItems] => 10
+   )
